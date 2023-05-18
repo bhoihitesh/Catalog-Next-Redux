@@ -4,8 +4,7 @@ import { useEffect } from "react";
 import { Provider } from "react-redux";
 import store from "./App/store";
 import { useRouter } from "next/router";
-import login from "./Login";
-import Login from "./Login";
+import Login from "./login";
 function MyApp({ Component, pageProps }) {
   let router = useRouter();
   console.log("router", router);

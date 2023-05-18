@@ -1,13 +1,22 @@
+import Head from "next/head";
 import React from "react";
-
+import { FaCubes } from "react-icons/fa";
 const Login = () => {
+  <Head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha384-x/6zEx1VmoR9oXsOhE6qC7TUeQ5CW7LlRIOzn1IeV7vLbf/nq+vIx4ViH7pIyvJM"
+      crossOrigin="anonymous"
+    />
+  </Head>;
   return (
-    <div>
-      <section className="vh-100" style={{ backgroundColor: "#9A616D" }}>
-        <div className="container py-5 h-100">
+    <>
+      <section className="" style={{ backgroundColor: "#9A616D" }}>
+        <div className="container h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col col-xl-10">
-              <div className="card" style={{ borderRadius: "1rem" }}>
+              <div className="card rounded-5">
                 <div className="row g-0">
                   <div className="col-md-6 col-lg-5 d-none d-md-block">
                     <img
@@ -20,11 +29,16 @@ const Login = () => {
                   <div className="col-md-6 col-lg-7 d-flex align-items-center">
                     <div className="card-body p-4 p-lg-5 text-black">
                       <form>
-                        <div className="d-flex align-items-center pb-1">
-                          <i
+                        <div className="d-flex align-items-center mb-3 pb-1">
+                          {/* <FontAwesomeIcon icon="cubes" /> */}
+                          <FaCubes
+                            className="me-3 fs-1"
+                            style={{ color: "#ff6219" }}
+                          />
+                          {/* <i
                             className="fas fa-cubes fa-2x me-3"
                             style={{ color: "#ff6219" }}
-                          ></i>
+                          ></i> */}
                           <span className="h1 fw-bold mb-0">Logo</span>
                         </div>
 
@@ -41,7 +55,10 @@ const Login = () => {
                             id="form2Example17"
                             className="form-control form-control-lg"
                           />
-                          <label className="form-label" for="form2Example17">
+                          <label
+                            className="form-label"
+                            htmlFor="form2Example17"
+                          >
                             Email address
                           </label>
                         </div>
@@ -52,7 +69,10 @@ const Login = () => {
                             id="form2Example27"
                             className="form-control form-control-lg"
                           />
-                          <label className="form-label" for="form2Example27">
+                          <label
+                            className="form-label"
+                            htmlFor="form2Example27"
+                          >
                             Password
                           </label>
                         </div>
@@ -93,7 +113,7 @@ const Login = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 
