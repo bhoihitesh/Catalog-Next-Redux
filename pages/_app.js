@@ -1,23 +1,36 @@
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import Layout from '../Component/layout';
-import { useEffect } from 'react';
-import { Provider } from 'react-redux';
-import store from './App/store';
-
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import Layout from "../Component/layout";
+import { useEffect } from "react";
+import { Provider } from "react-redux";
+import store from "./App/store";
+import { useRouter } from "next/router";
+import login from "./Login";
+import Login from "./Login";
 function MyApp({ Component, pageProps }) {
-	useEffect(() => {
-		import('../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js');
-	}, []);
-	return (
-		<>
-			<Provider store={store}>
-				<Layout>
+  let router = useRouter();
+  console.log("router", router);
+  useEffect(() => {
+    import("../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
 
-					<Component {...pageProps} />
-				</Layout>
-			</Provider>
-		</>
-	);
+  useEffect(() => {
+    if (router.pathname === "/") {
+      router.push("/login");
+    }
+  }, [router.pathname]);
+  return (
+    <>
+      <Provider store={store}>
+        {router.pathname === "/login" ? (
+          <Login />
+        ) : (
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        )}
+      </Provider>
+    </>
+  );
 }
 
 export default MyApp;
